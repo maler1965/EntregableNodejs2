@@ -5,14 +5,13 @@ const repairsController = require('./../controllers/repairs.controller');
 
 //middlewares
 const userMiddleware = require('./../middlewares/repairs.middleware');
-const validationMiddleware = require('./../middlewares/validations.middleware');
 
 const router = express.Router();
 
 router.get('/', repairsController.findAllUsers);
 router.post('/', repairsController.createUsers);
 
-// router.use('/:id', userMiddleware.validUser);  validationMiddleware.updateUserValidation,
+// router.use('/:id', userMiddleware.validUser);
 
 router
   .use('/:id', userMiddleware.validUser)

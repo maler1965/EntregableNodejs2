@@ -17,9 +17,9 @@ const validFields = (req, res, next) => {
 exports.updateUserValidation = [
   //aqui solo estoy declarando las validaciones o los requisitos que quiero que tengan los datos
   body('name').notEmpty().withMessage('Name is required'), //estas validaciones arrogan errores pero aqui no los estoy atrapando
-  body('description')
+  body('email')
     .notEmpty()
-    .withMessage('Description is required')
+    .withMessage('Email is required')
     .isLength({ min: 10 })
     .withMessage('Description must be at least 10 characters long'),
   validFields,
